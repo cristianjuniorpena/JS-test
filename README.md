@@ -1,2 +1,2 @@
-# JS-test
-s
+# curso-js
+exercicios javascript :D

@@ -1,28 +1,28 @@
 const readline = require("readline");
 
-const r1 = readline.createInterface({
+const rl = readline.createInterface({
     input: process.stdin,
-    output: process.stdout,
+    output: process.stdout
 });
 
-r1.question("Digite o seu peso (kg): ", (peso) => {
-    r1.question("Digite sua altura (m): ", (altura) => {
+rl.question("Digite seu peso (Kg): ", (peso) => {
+    rl.question("Digite sua altura (m): ", (altura) => {
         peso = parseFloat(peso);
         altura = parseFloat(altura);
 
         let imc = peso / (altura * altura);
-        console.log('Seu imc é: $(imc.toFixed(2)}');
-        
+        console.log(`Seu IMC é: ${imc.toFixed(2)}`);
+
         if (imc < 18.5) {
-            console.log ("classificação abaixo do peso");
+            console.log("Classficação: Abaixo do peso");
         } else if (imc < 24.9) {
-            console.log("classificação de peso normal");
+            console.log("Classificação: Peso normal");
         } else if (imc < 29.9) {
-            console.log("classificação de sobrepeso");
+            console.log("Classificação: Sobrepeso");
         } else {
-            console.log("classificação de peso obesidade")
+            console.log("Classificação: Obesidade");
         }
 
-        r1.close();
+        rl.close();
     });
 });
